@@ -1,8 +1,6 @@
 //Primer pre entrega JS, alumno: Ueno Leandro
 
 
-//No pude hacer funcionar el array, no agrega los productos al array.
-//y agregar mas funciones
 
 //por cuestion de tiempo esta bastante basico el trabajo y errores de organizacion o sintaxis, pero espero ir mejorandolo
 
@@ -16,12 +14,23 @@ let carrito = 0;
 let agregarAlCarrito;
 
 //ARRAYS/////////////////////////////////////////////////////////
-let productos = [];
+let productos = [{}];
+
+let products = ["prod1","prod2","prod3","prod4"];
+
+let precios = [5000,10000, 15000, 20000];
+
+//OBJETOS////////////////////////////////////////////////////////
 
 let producto1 = {product:'prod1', precio: 5000};
 let producto2 = {product:'prod2', precio:10000};
 let producto3 = {product:'prod3', precio:15000};
 let producto4 = {product:'prod4', precio:20000};
+
+// function suuma(){
+//     productos.push(products[0], precios[0]);
+// }
+// suuma();
 
 
 // if(billetera == carrito){
@@ -76,18 +85,22 @@ while(continuar){
             case 1:
                 carrito = carrito+ 5000;
                 alert("Añadiste prod1 $5000")
+                productos.push(products[0], precios[0])
                 break;
                 case 2:
                     carrito= carrito+10000;
                     alert("Añadiste prod2 $10000")
+                    productos.push(products[1], precios[1])
                     break;
                 case 3:
                     carrito= carrito+15000;
                     alert("Añadiste prod3 $15000")
+                    productos.push(products[2], precios[2])
                     break;
                 case 4:
                     carrito= carrito+20000;
                     alert("Añadiste prod4 $20000")
+                    productos.push(products[3], precios[3])
                     break;
                 case 5:
                     confirm('Eliminar prducto');
@@ -96,7 +109,7 @@ while(continuar){
                     confirm('Confirmar compra')
                     break;
                 case 7:
-                    alert("El total hasta el momento es de: $" + carrito +'\n'+productos);
+                    alert("El total hasta el momento es de: $" + carrito +'\n'+ productos);
                     break;
                 default:
                     alert("Elige ootra opcion");
@@ -104,8 +117,22 @@ while(continuar){
 
                     function sumaCarrito(){
   //              let eleccionSuma =;
+                if(eleccion === 1){
+                    productos.push(products[0], precios[0])
+                }else if(eleccion === 2){
+                    productos.push(products[1], precios[1])
+                }else if(eleccion === 3){
+                    productos.push(products[2], precios[2])
+                }else if(eleccion === 4){
+                    productos.push(products[3], precios[3])
+                }
+            }
+            sumaCarrito();
+function sumaCarritoB(){
+  //              let eleccionSuma =;
                 if(eleccion == 1){
                     productos.push(producto1)
+                    productos.push(products[0], precios[0])
                 }else if(eleccion == 2){
                     productos.push(producto2)
                 }else if(eleccion == 3){
@@ -114,7 +141,8 @@ while(continuar){
                     productos.push(producto4)
                 }
             }
-
+            sumaCarritoB();
+            
 
                 } if(eleccion == 6){
                 continuar = false;
@@ -148,23 +176,11 @@ while(continuar){
                     }
                 }restaCarrito();
             }
-            alert('productos \ntu carrito $'+ carrito + '\n' +productos + 'product')
+            alert('productos \ntu carrito $'+ carrito + '\n' + productos + 'product')
             }
 
 //FUNCION////////////////////////////////////////////////////
-            function sumaCarrito(){
-  //              let eleccionSuma =;
-                if(eleccion == 1){
-                    productos.push(producto1)
-                }else if(eleccion == 2){
-                    productos.push(producto2)
-                }else if(eleccion == 3){
-                    productos.push(producto3)
-                }else if(eleccion == 4){
-                    productos.push(producto4)
-                }
-            }
-            
+           
 
 if(billetera == carrito){
     alert('alcanzaste tu limite');
