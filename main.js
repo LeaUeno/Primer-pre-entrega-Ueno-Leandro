@@ -80,7 +80,7 @@ while(continuar){
     while(continuar){
        // alert('productos \ntu carrito \n' +productos)
 
-        let eleccion = parseInt(prompt('Precios \n1)prod1: 5000 \n2)prod2: 10000 \n3)prod3: 15000 \n4)prod4: $20000 \n5) Eliminar producto \n6)Confirma \n7)Total'+'\nbilletera $'+ billetera +'       / tu carrito $' + carrito));
+        let eleccion = parseInt(prompt('Precios \n1)prod1: 5000 \n2)prod2: 10000 \n3)prod3: 15000 \n4)prod4: $20000 \n5) Eliminar producto \n6)Confirma \n7)Total \n8)Aplicar cupon de descuento 15% '+'\nbilletera $'+ billetera +'       / tu carrito $' + carrito));
         switch(eleccion){
             case 1:
                 carrito = carrito+ 5000;
@@ -107,10 +107,27 @@ while(continuar){
                     break;
                 case 6:
                     confirm('Confirmar compra')
+                    carrito = carrito*1.21;
+                    // function ivaCalculo(){
+                    //     let iva = carrito*1.21;
+                    // }
+                    //     ivaCalculo();
+
                     break;
                 case 7:
                     alert("El total hasta el momento es de: $" + carrito +'\n'+ productos);
                     break;
+                case 8:
+                    alert('Aplicar descuento 15%')
+                    carrito = carrito - carrito*(15/100);
+                    alert("Aplicaste tu descuento de 15% \n tu carrito: $" + carrito)
+                //     function descuento(){
+                //     if(eleccion == 8){
+                //     carrito = carrito - carrito*(15/100) ;
+                //     alert("Aplicaste tu descuento de 15% \n tu carrito: " + carrito)
+                // }
+                // descuento();
+                // }
                 default:
                     alert("Elige ootra opcion");
                     break;
@@ -132,7 +149,7 @@ function sumaCarritoB(){
   //              let eleccionSuma =;
                 if(eleccion == 1){
                     productos.push(producto1)
-                    productos.push(products[0], precios[0])
+                   // productos.push(products[0], precios[0])
                 }else if(eleccion == 2){
                     productos.push(producto2)
                 }else if(eleccion == 3){
@@ -153,7 +170,9 @@ function sumaCarritoB(){
 //FUNCION/////////////////////////////////////////////////////                
                 function restaCarrito(){
                     let eleccionResta= parseInt(prompt('resta carrito elija que quiere eliminar \n1)$5000 \n2)$10000 \n3)$15000 \n4)$20000'+'\nbilletera $'+ billetera +'       / tu carrito $' + carrito))
-                    switch(eleccionResta){
+
+
+                    switch(eleccionResta){//switch////////////////////
                         case 1:
                 carrito = carrito - 5000;
                 alert("Eliminaste prod1 $5000")
@@ -182,11 +201,20 @@ function sumaCarritoB(){
             }
 
             if(carrito >= billetera){
-    alert('Limite alcanzado: $' + billetera +' no tenes mas plata ' + '\n carrito: $ '+carrito);
-    continuar = false;}
+                alert('Limite alcanzado: $' + billetera +' no tenes mas plata ' + '\n carrito: $ '+carrito);
+                continuar = false;}
+                
+                alert('productos \ntu carrito $'+ carrito + '\n' + productos + 'product')
 
-            alert('productos \ntu carrito $'+ carrito + '\n' + productos + 'product')
-            }
+                // function descuento(){
+                //     if(eleccion == 8){
+                //     carrito = carrito - carrito*(15/100) ;
+                //     alert(carrito)
+                // }
+                // descuento();
+                // }
+                
+            }//fin WHILE///////////////////////////////////////////
 
 //FUNCION////////////////////////////////////////////////////
 
