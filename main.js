@@ -5,7 +5,7 @@
 //por cuestion de tiempo esta bastante basico el trabajo y errores de organizacion o sintaxis, pero espero ir mejorandolo
 
 alert('Presentacion es un simulador de compras, en la que tenes tu billetera y vas calculando la compra')
-alert('Precios \n1) $5000 \n2) $10000 \n3) $15000 \n4)20000  \ncompra minima de $5000')
+alert('Precios \n1)Prod1: $5000 \n2)Prod2: $10000 \n3)Prod3: $15000 \n4)Prod4: $20000  \ncompra minima de $5000')
 
 let billetera = parseInt(prompt('Ingresa la plata que tenes en tu billetera'));
 let continuar = true;
@@ -80,7 +80,7 @@ while(continuar){
     while(continuar){
        // alert('productos \ntu carrito \n' +productos)
 
-        let eleccion = parseInt(prompt('Precios \n1) 5000 \n2)10000 \n3)15000 \n4)$20000 \n5) Eliminar producto \n6)Confirma \n7)Total'+'\nbilletera $'+ billetera +'       / tu carrito $' + carrito));
+        let eleccion = parseInt(prompt('Precios \n1)prod1: 5000 \n2)prod2: 10000 \n3)prod3: 15000 \n4)prod4: $20000 \n5) Eliminar producto \n6)Confirma \n7)Total'+'\nbilletera $'+ billetera +'       / tu carrito $' + carrito));
         switch(eleccion){
             case 1:
                 carrito = carrito+ 5000;
@@ -157,18 +157,22 @@ function sumaCarritoB(){
                         case 1:
                 carrito = carrito - 5000;
                 alert("Eliminaste prod1 $5000")
+                productos.pop();
                 break;
                 case 2:
                     carrito= carrito - 10000;
                     alert("Eliminaste prod2 $10000")
+                    productos.pop();
                     break;
                 case 3:
                     carrito= carrito-15000;
                     alert("Eliminaste prod3 $15000")
+                    productos.pop();
                     break;
                 case 4:
                     carrito= carrito-20000;
                     alert("Eliminaste prod4  $20000")
+                    productos.pop();
                     break;
                 default:
                     alert("Elige ootra opcion");
@@ -176,22 +180,27 @@ function sumaCarritoB(){
                     }
                 }restaCarrito();
             }
+
+            if(carrito >= billetera){
+    alert('Limite alcanzado: $' + billetera +' no tenes mas plata ' + '\n carrito: $ '+carrito);
+    continuar = false;}
+
             alert('productos \ntu carrito $'+ carrito + '\n' + productos + 'product')
             }
 
 //FUNCION////////////////////////////////////////////////////
 
-if(billetera == carrito){
-    alert('alcanzaste tu limite');
-    continuar = false;
-}else if(billetera > carrito){
-    alert('Limite alcanzado: $' + billetera +' no tenes mas plata ' + '\n carrito: $ '+carrito);
-    continuar = false;
+// if(carrito >= billetera){
+//     alert('Limite alcanzado: $' + billetera +' no tenes mas plata ' + '\n carrito: $ '+carrito);
+//     continuar = false;}
+// }else if(billetera > carrito){
+//     alert('Limite alcanzado: $' + billetera +' no tenes mas plata ' + '\n carrito: $ '+carrito);
+//     continuar = false;
 
 
 
-        continuar = confirm('¿¿Continuar??');
-    }
+//         continuar = confirm('¿¿Continuar??');
+//     }
 
 
     
