@@ -13,19 +13,19 @@ let continuar = true;
 let carrito = 0;
 let agregarAlCarrito;
 
-//ARRAYS/////////////////////////////////////////////////////////
+//ARRAYS Y OBJETOS/////////////////////////////////////////////////////////
 let productos = [{}];
 
-let products = ["prod1","prod2","prod3","prod4"];
+let products = ["|prod1: ","|prod2: ","|prod3: ","|prod4: "];
 
 let precios = [5000,10000, 15000, 20000];
 
-//OBJETOS////////////////////////////////////////////////////////
 
-let producto1 = {product:'prod1', precio: 5000};
-let producto2 = {product:'prod2', precio:10000};
-let producto3 = {product:'prod3', precio:15000};
-let producto4 = {product:'prod4', precio:20000};
+
+let producto1 = {product:'|prod1', precio: 5000};
+let producto2 = {product:'|prod2', precio:10000};
+let producto3 = {product:'|prod3', precio:15000};
+let producto4 = {product:'|prod4', precio:20000};
 
 // function suuma(){
 //     productos.push(products[0], precios[0]);
@@ -180,7 +180,6 @@ function sumaCarritoB(){
             }
 
 //FUNCION////////////////////////////////////////////////////
-           
 
 if(billetera == carrito){
     alert('alcanzaste tu limite');
@@ -195,10 +194,10 @@ if(billetera == carrito){
     }
 
 
-    continuar = confirm('¿¿Desea salir??');
+    
+}continuar = confirm('¿¿Desea salir??');
     if(continuar == true){
-        alert('adios')
+        alert('adiossss')
     }else{
-        alert('adios')
+        alert('adiosss')
     }
-}
