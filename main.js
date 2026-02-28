@@ -401,9 +401,9 @@ let eleccionCuotas;
 let result;
 
     function calculoCuotas(cantidad,cuotas){
-        result = cantidad * cuotas;
+        result = (cantidad *0.30) * cuotas;//*dividir por cant cuotas
         return result;
-        alert(result)
+        alert('Total Monto a pagar' + result)
     }
     calculoCuotas(eleccionPrestamo, eleccionCuotas);
 
