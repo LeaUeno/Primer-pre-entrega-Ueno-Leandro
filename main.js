@@ -32,11 +32,13 @@ let resultado;
 // }
 // saldoCalculo();
 
-function saldoCalculo(billetera, carrito){
-    saldo = billetera - carrito ;
-    return saldo;
+function saldoCalculo(billetera1, carrito1){
+//    saldo = billetera - carrito ;
+    return billetera1 - carrito1;
 }
-saldoCalculo(billetera, carrito);
+//saldoCalculo();
+
+saldo = saldoCalculo(billetera, carrito)
 
 let producto1 = {product:'|prod1', precio: 5000};
 let producto2 = {product:'|prod2', precio:10000};
@@ -100,24 +102,28 @@ while(continuar){
         switch(eleccion){
             case 1:
                 carrito = carrito+ 5000;
+                saldo = saldoCalculo(billetera, carrito);
                 //saldo = billetera -5000;
                 alert("Añadiste prod1 $5000")
                 productos.push(products[0], precios[0])
                 break;
                 case 2:
                     carrito= carrito+10000;
+                    saldo = saldoCalculo(billetera, carrito);
                    // saldo = billetera -10000;
                     alert("Añadiste prod2 $10000")
                     productos.push(products[1], precios[1])
                     break;
                 case 3:
                     carrito= carrito+15000;
+                    saldo = saldoCalculo(billetera, carrito);
                     //saldo = billetera -15000;
                     alert("Añadiste prod3 $15000")
                     productos.push(products[2], precios[2])
                     break;
                 case 4:
                     carrito= carrito+20000;
+                    saldo = saldoCalculo(billetera, carrito);
                     //saldo = billetera -20000;
                     alert("Añadiste prod4 $20000")
                     productos.push(products[3], precios[3])
@@ -128,6 +134,7 @@ while(continuar){
                 case 6:
                     confirm('Confirmar compra')
                     carrito = carrito*1.21;
+//                    saldo = saldoCalculo(billetera, carrito);
                     // function ivaCalculo(){
                     //     let iva = carrito*1.21;
                     // }
@@ -157,7 +164,7 @@ while(continuar){
 //                     function saldoCalculo(){
 //     saldo = billetera - carrito ;
 //     return saldo;
-// }
+//}
 // saldoCalculo();
 function saldoResultado(){
                         if(eleccion == 1 ||eleccion == 2||eleccion ==3||eleccion == 4){
@@ -265,7 +272,7 @@ function sumaCarritoB(){
 
 
     
-}continuar = confirm('¿¿Desea salir??');
+        }continuar = confirm('¿¿Desea salir??');
     if(continuar == true){
         alert('adiossss')
     }else{
