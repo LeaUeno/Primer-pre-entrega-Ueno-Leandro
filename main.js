@@ -98,7 +98,7 @@ while(continuar){
     while(continuar){
        // alert('productos \ntu carrito \n' +productos)
 
-        let eleccion = parseInt(prompt('Precios \n1)prod1: 5000                  5) Eliminar producto\n2)prod2: 10000                6)Confirma\n3)prod3: 15000                7)Total\n4)prod4: $20000              8)Aplicar cupon de descuento 15% \n'+'\n/ Billetera: $'+ billetera +'       / tu carrito $' + carrito +'\n/ Saldo: $' + saldo + '|' +resultado));
+        let eleccion = parseInt(prompt('Precios \n1)prod1: $5000                  5) Eliminar producto\n2)prod2: $10000                6)Confirma\n3)prod3: $15000                7)Total\n4)prod4: $20000                8)Aplicar cupon de descuento 15% \n'+'\n/ Billetera: $'+ billetera +'       / tu carrito $' + carrito +'\n/ Saldo: $' + saldo + '|' +resultado));
         switch(eleccion){
             case 1:
                 carrito = carrito+ 5000;
@@ -278,3 +278,156 @@ function sumaCarritoB(){
     }else{
         alert('adiosss')
     }
+
+
+
+////////////////////////////////////////////////////////////////////////
+//////////////////////////FIN CODIGO PRIINCIPAL/////////////////////////
+////////////////////////////////////////////////////////////////////////
+
+
+    let mas ;
+
+    let continuar1 = true;
+
+    while(continuar1){
+        alert('Tenemos mas servicios\n1)Prestamo personal\n2)Cajero Automatico\n3)Calculadora');
+        continuar1= confirm('desea continuar??');
+
+        
+        let eleccion2= parseInt(prompt('Ingrese opcion:\n1)Prestamo personal \n2)Cajero Automatico \n3)Calculadora '))
+
+
+        function switchMas(){
+            switch(eleccion2){
+                case 1:
+                    alert('Prestamo')
+                    break;
+                case 2:
+                    alert('Cajero')
+                    break;
+                case 3:
+                    alert('Calculadora')
+                    break;
+                default:
+                    alert('def')
+                    break;
+            }
+            
+        }switchMas();
+
+        function switchMasContinuar(){
+            if(eleccion2 == 1){
+                alert('1 continuar')
+        }else if(eleccion2 ==2){
+            alert('2 continuar')
+
+        }else if(eleccion2 ==3){
+            alert('3 continuar')
+        }
+        return eleccion2;
+    }switchMasContinuar()
+
+let eleccionPrestamo;
+
+let cantidad;
+
+let eleccionCuotas;
+    function prestamo(){
+        if(eleccion2 == 1){
+                alert('Hacemos prestamos desde $10.000 hasta $500.000\n a pagar en 1 mes,3 meses, 6 meses,1 año ')
+                eleccionPrestamo= parseInt(prompt('Que cantidad necesita?\n limites: desde $10.000 hasta $500.000'));
+
+//                return cantidad;
+                
+        }prestamoContinuar()
+    }
+    prestamo();
+
+
+
+    // function prestamoContinuar(){
+    //     if (cantidad >= 10000 && cantidad <=500000){
+    //         alert('Puede acceder al prestamo, en cuanto tiempo lo va a finalizar?')
+    //     }else if(cantidad <10000){
+    //         alert('Solo desde $10.000 hasta $500.000')
+    //     }else if(cantidad >500000){
+    //         alert('Limite exedido, solo hasta $500.000')
+    //     }
+
+    // }
+    // prestamoContinuar()
+
+        function prestamoContinuar(){
+        if (eleccionPrestamo >= 10000 && eleccionPrestamo <=500000){
+            alert('Cantidad: $'+ eleccionPrestamo +'.\nPuede acceder al prestamo, en cuanto tiempo lo va a finalizar?')
+            eleccionCuotas = true;
+        }else if(eleccionPrestamo <10000){
+            alert('Cantidad: $'+ eleccionPrestamo +'.\nSolo desde $10.000 hasta $500.000')
+        }else if(eleccionPrestamo >500000){
+            alert('Cantidad: $'+ eleccionPrestamo +'.\nLimite exedido, solo hasta $500.000')
+        }
+        return eleccionCuotas;
+    }
+    prestamoContinuar()
+
+    function eleccionCuotasF(){
+        eleccionCuotas= parseInt(prompt('Cantidad: $'+ eleccionPrestamo +'.\nElija cuotas\n1)1 mes\n2)3 meses\n3)6 meses \n4)1 año'))
+
+        switch(eleccionCuotas){
+            case 1:
+                alert('1 mes');
+                eleccionCuotas =1;
+                break;
+            case 2:
+                alert('3 meses');
+                eleccionCuotas =3;
+                break;
+            case 3:
+                alert('6 meses');
+                eleccionCuotas =6;
+                break;
+            case 4:
+                alert('1 año');
+                eleccionCuotas =12;
+                break;
+            default:
+                alert('cancelar');
+                break;
+        }
+    }
+    eleccionCuotasF();
+
+let result;
+
+    function calculoCuotas(cantidad,cuotas){
+        result = cantidad * cuotas;
+        return result;
+        alert(result)
+    }
+    calculoCuotas(eleccionPrestamo, eleccionCuotas);
+
+
+////////////////////////////////////////////////////////////////////////
+//////////////////////////CAJERO////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+    function cajero(){
+        if(eleccion2 == 2){
+                alert('opciones de cajero automatico')
+        }
+    }
+    cajero();
+
+////////////////////////////////////////////////////////////////////////
+//////////////////////////CALCU/////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+    function calcu(){
+        if(eleccion2 == 3){
+                alert('opciones de calcu ')
+        }
+    }
+    calcu();
+//        alert('seleccione');
+    }
+    
+    alert('adios')
