@@ -5,7 +5,7 @@
 //por cuestion de tiempo esta bastante basico el trabajo y errores de organizacion o sintaxis, pero espero ir mejorandolo
 
 alert('Presentacion es un simulador de compras, en la que tenes tu billetera y vas calculando la compra')
-alert('Precios \n1)Prod1: $5000 \n2)Prod2: $10000 \n3)Prod3: $15000 \n4)Prod4: $20000  \ncompra minima de $5000')
+alert('Precios \n1)Prod1: $5000 \n2)Prod2: $10000 \n3)Prod3: $15000 \n4)Prod4: $20000\n  \n|Compra minima de $5000')
 
 let billetera = parseInt(prompt('Ingresa la plata que tenes en tu billetera'));
 let continuar = true;
@@ -21,6 +21,22 @@ let products = ["|prod1: ","|prod2: ","|prod3: ","|prod4: "];
 let precios = [5000,10000, 15000, 20000];
 
 
+
+let saldo = billetera;
+let resultado;
+
+
+// function saldoCalculo(a, b){
+//     saldo = billetera - carrito ;
+//     return saldo;
+// }
+// saldoCalculo();
+
+function saldoCalculo(billetera, carrito){
+    saldo = billetera - carrito ;
+    return saldo;
+}
+saldoCalculo(billetera, carrito);
 
 let producto1 = {product:'|prod1', precio: 5000};
 let producto2 = {product:'|prod2', precio:10000};
@@ -80,25 +96,29 @@ while(continuar){
     while(continuar){
        // alert('productos \ntu carrito \n' +productos)
 
-        let eleccion = parseInt(prompt('Precios \n1)prod1: 5000 \n2)prod2: 10000 \n3)prod3: 15000 \n4)prod4: $20000 \n5) Eliminar producto \n6)Confirma \n7)Total \n8)Aplicar cupon de descuento 15% '+'\nbilletera $'+ billetera +'       / tu carrito $' + carrito));
+        let eleccion = parseInt(prompt('Precios \n1)prod1: 5000                  5) Eliminar producto\n2)prod2: 10000                6)Confirma\n3)prod3: 15000                7)Total\n4)prod4: $20000              8)Aplicar cupon de descuento 15% \n'+'\n/ Billetera: $'+ billetera +'       / tu carrito $' + carrito +'\n/ Saldo: $' + saldo + '|' +resultado));
         switch(eleccion){
             case 1:
                 carrito = carrito+ 5000;
+                //saldo = billetera -5000;
                 alert("Añadiste prod1 $5000")
                 productos.push(products[0], precios[0])
                 break;
                 case 2:
                     carrito= carrito+10000;
+                   // saldo = billetera -10000;
                     alert("Añadiste prod2 $10000")
                     productos.push(products[1], precios[1])
                     break;
                 case 3:
                     carrito= carrito+15000;
+                    //saldo = billetera -15000;
                     alert("Añadiste prod3 $15000")
                     productos.push(products[2], precios[2])
                     break;
                 case 4:
                     carrito= carrito+20000;
+                    //saldo = billetera -20000;
                     alert("Añadiste prod4 $20000")
                     productos.push(products[3], precios[3])
                     break;
@@ -132,6 +152,19 @@ while(continuar){
                     alert("Elige ootra opcion");
                     break;
 
+                    
+
+//                     function saldoCalculo(){
+//     saldo = billetera - carrito ;
+//     return saldo;
+// }
+// saldoCalculo();
+function saldoResultado(){
+                        if(eleccion == 1 ||eleccion == 2||eleccion ==3||eleccion == 4){
+                            resultado = saldo ;
+                        }
+                    }saldoResultado();
+
                     function sumaCarrito(){
   //              let eleccionSuma =;
                 if(eleccion === 1){
@@ -164,7 +197,7 @@ function sumaCarritoB(){
                 } if(eleccion == 6){
                 continuar = false;
                 alert('confirma')
-                alert('El total es de $'+ carrito)
+                alert('El total es de $'+ carrito +'\n|Saldo: $' + saldo)
             }else if(eleccion == 5){
 
 //FUNCION/////////////////////////////////////////////////////                
@@ -200,7 +233,7 @@ function sumaCarritoB(){
                 }restaCarrito();
             }
 
-            if(carrito >= billetera){
+            if(carrito > billetera){
                 alert('Limite alcanzado: $' + billetera +' no tenes mas plata ' + '\n carrito: $ '+carrito);
                 continuar = false;}
                 
